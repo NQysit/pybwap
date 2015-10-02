@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+
+{% block title %} xss 0x01 {% endblock %}
+
+{% block content %} 
+
+    <h1> Hello {{name | safe}} !! </h1>
+    
+{% endblock %}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %} {% endblock %} - pyBWAP </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        {% block styles %}
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+        {% endblock %}
+        
+        <style>{% block style %}{% endblock %}</style>
+    </head>
+
+    <body>
+
+      <!-- Always shows a header, even in smaller screens. -->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            
+            <span class="mdl-layout-title">pyBWAP</span>
+            
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="">Inicio</a>
+              <a class="mdl-navigation__link" href="">Contacto</a>
+            </nav>
+          </div>
+        </header>
+        
+        <main class="mdl-layout__content">
+          <div class="page-content">
+            {% block content %} {% endblock %}
+            <footer class="mdl-mini-footer">
+              <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo"></div>
+                <ul class="mdl-mini-footer__link-list">
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Privacy & Terms</a></li>
+                </ul>
+              </div>
+            </footer>
+          </div>
+        </main>
+      </div>
+
+
+      {% block scripts %}
+      <script src="{{url_for('static', filename='js/main.js')}}"></script>
+      <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+      {% endblock %}
+
+    </body>
+</html>
